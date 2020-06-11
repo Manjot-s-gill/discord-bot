@@ -2,7 +2,7 @@ from discord.ext import commands
 from discord.ext.commands import Bot
 import time
 import os
-import ClanInfo
+import ClanInfo  # Self-made library used to write requested JSON data to 'clanInfo.txt' file.
 import asyncio
 
 
@@ -15,7 +15,7 @@ async def on_ready():
 
 @client.command()
 async def claninfo(ctx):
-    ClanInfo.clan_info()
+    ClanInfo.clan_info()          # Self-made library used to write requested JSON data to 'clanInfo.txt' file.
 
     # Changing directory to read the claninfo file
     os.chdir("a:\Programming\Python")
@@ -27,7 +27,7 @@ async def claninfo(ctx):
     message = await ctx.send(data)
     await asyncio.sleep(2)
 
-    """Created infinite loop to keep to edit the previous sent message after certain interval! 
+    """Created infinite loop to keep editing the previous sent message after certain interval! 
     Used 'await asyncio.sleep()' | so that it will not block the execution entirely and let other commands run untill it's in sleep mode."""
 
     while(True):
@@ -39,12 +39,11 @@ async def claninfo(ctx):
         f.close()
         
         await message.edit(content=data)
-        print('worked')
         await asyncio.sleep(20)
         
 @client.command()
 async def test(ctx):
     await ctx.send("this is working")
 
-client.run('Your Discord Bot token')
+client.run('Your Discord App token')
 
