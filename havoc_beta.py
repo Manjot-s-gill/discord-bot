@@ -46,5 +46,5 @@ async def claninfo(ctx):
 async def test(ctx):
     await ctx.send("this is working")
 
-client.run('NzE4NDQ0ODU4NTE5NTg0ODk4.Xto98Q.4gzALFZ_2zkhIbzPpiEpjzZrA4w')
+client.run('Your Discord Bot token')
 
